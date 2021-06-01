@@ -18,7 +18,7 @@ img = cv2.imread(img_data['image'])
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img = cv2.resize(img, (cells_per_side, cells_per_side))
 
-screen = pygame.display.set_mode((pixels_per_side,pixels_per_side))
+screen = pygame.display.set_mode((pixels_per_side,pixels_per_side), pygame.RESIZABLE)
 screen.fill(black)
 
 color_array = np.load(img_data['color_arr'])
@@ -30,6 +30,9 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
+        elif event.type == pygame.VIDEORESIZE:
+            screen = pygame.display.set_mode((event.w, event.h),
+                                              pygame.RESIZABLE)
 
 
     coordinate_array = np.roll(coordinate_array, speed, axis=0)
