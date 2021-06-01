@@ -1,0 +1,10 @@
+image_map = {1:{'image':'byulogo.png','color_arr':'byulogo_color_array.npy','coord_arr':'byulogo_coordinate_array.npy'},
+			   2:{'image':'blackandwhite.jpg','color_arr':'blackandwhite_color_array.npy','coord_arr':'blackandwhite_coordinate_array.npy'},
+			   3:{'image':'jarodlessar.jpg','color_arr':'jarodlessar_color_array.npy','coord_arr':'jarodlessar_coordinate_array.npy'},
+			   4:{'image':'rainbow.jpg','color_arr':'rainbow_color_array.npy','coord_arr':'rainbow_coordinate_array.npy'},
+			   5:{'image':'abbystainton.jpg','color_arr':'abbystainton_color_array.npy','coord_arr':'abbystainton_coordinate_array.npy'},
+			   6:{'image':'butterfly.jpg','color_arr':'butterfly_color_array.npy','coord_arr':'butterfly_coordinate_array.npy'},
+			   7:{'image':'dancers.jpg','color_arr':'dancers_color_array.npy','coord_arr':'dancers_coordinate_array.npy'},
+			   8:{'image':'marriott.jpg','color_arr':'marriott_color_array.npy','coord_arr':'marriott_coordinate_array.npy'},
+			   9:{'image':'moon.jpg','color_arr':'moon_color_array.npy','coord_arr':'moon_coordinate_array.npy'},
+			   10:{'image':'studying.jpg','color_arr':'studying_color_array.npy','coord_arr':'studying_coordinate_array.npy'}}
