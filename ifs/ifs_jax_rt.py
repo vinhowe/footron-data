@@ -3,7 +3,7 @@ import jax
 import jax.numpy as jnp
 import numpy as np
 import time
-
+import os
 import rtdisp_jax
 
 #WIDTH = 1024
@@ -16,9 +16,14 @@ import rtdisp_jax
 WIDTH = 2048
 HEIGHT = 2048
 PSEUDO_CNTS = 10
-CNT = 10*10000000 # number of particles
 NUM_UPDATES = 4
-SF = 3.0 # constant scale factor avoids flickering
+
+if 'QUALITY' in os.environ and os.environ['QUALITY']=='low':
+    CNT = 1*10000000 # number of particles
+    SF = 0.75 # constant scale factor avoids flickering
+else:
+    CNT = 10*10000000 # number of particles
+    SF = 3.0 # constant scale factor avoids flickering
 
 PARAMS = jnp.atleast_2d([
     [ -2.950, 1,     -1,     1],
