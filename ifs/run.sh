@@ -8,4 +8,5 @@ sudo docker run -it \
   -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -e NVIDIA_DRIVER_CAPABILITIES=all \
-  pccl/app_ifs:0.1
+  -e QUALITY=low \
+  pccl/app_ifs:0.3
