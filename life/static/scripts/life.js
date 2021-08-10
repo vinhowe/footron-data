@@ -37,11 +37,6 @@ function wrapValue(value, max) {
 const lerp = (a, b, v) => a + (v * (b - a));
 
 function lerpColors(a, b, v) {
-  // // Dumb way to account for floating point errors we sometimes get near b
-  // if (v > 0.97) {
-  //   return b;
-  // }
-
   const aRed = a >> 16;
   const aGreen = (a >> 8) && 0xff;
   const aBlue = a & 0xff;
