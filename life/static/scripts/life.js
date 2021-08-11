@@ -22,7 +22,7 @@ const FRAME_DURATION = 16.6667;
 // We have to cap steps per frame or we can get into a feedback loop where each frame takes longer than the last one
 const MAX_STEPS_PER_FRAME = 40;
 // How many steps we let a cell be continuously alive for before killing it
-const DEATH_AGE = 1000;
+const DEATH_AGE = 10000;
 // How many gliders to randomly populate the map with
 const INITIAL_GLIDER_COUNT = 50;
 
