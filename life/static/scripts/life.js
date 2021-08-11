@@ -64,10 +64,20 @@ class GameOfLife {
     this.bindMethods();
     this.initializeGraphics();
     this.initializeGrid();
+
+    const client = new FootronMessaging.Messaging();
+    client.mount();
+    client.addMessageListener(this.messageHandler);
   }
 
   bindMethods() {
     this.loop = this.loop.bind(this);
+    this.messageHandler = this.messageHandler.bind(this);
+  }
+
+  messageHandler(message) {
+    // A nice exponential function that gives a nice feeling of control over speed
+    this.stepsPerFrame = Math.min(((2.9833 * message) ** 2) + 0.1, 9);
   }
 
   initializeGraphics() {
