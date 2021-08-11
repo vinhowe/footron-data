@@ -196,6 +196,9 @@ class GameOfLife {
   }
 
   stepCells() {
+    if (Math.random() < 0.01) {
+      this.spawnRandomGlider();
+    }
     this.cells.forEach((c) => c.prepareUpdate());
     this.cells.forEach((c) => c.update());
   }
@@ -224,10 +227,6 @@ class GameOfLife {
     }
     if (steps > 0) {
       this.deltaSinceStep = 0;
-    }
-
-    if (Math.random() < 0.1) {
-      this.spawnRandomGlider();
     }
 
     this.graphics.clear();
