@@ -1,0 +1,9 @@
+{
+    "id": "ifs",
+    "type": "docker",
+    "title": "IFS Visualization",
+    "description": "Math and computing can be beautiful.<br><br>Explore a DeJong iterated functional system.",
+    "artist": "David Wingate",
+    "image_id": "pccl/app_ifs:1.1",
+    "lifetime": 120
+}
