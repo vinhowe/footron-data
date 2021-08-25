@@ -1,0 +1,9 @@
+{
+    "id": "style-transfer",
+    "type": "docker",
+    "title": "Step Into a Painting",
+    "description": "Ever wondered how you’d look in a Van Gogh painting?",
+    "artist": "David Wingate",
+    "image_id": "pccl/app_styletransfer:0.1",
+    "lifetime": 120
+}
