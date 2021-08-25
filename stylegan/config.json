@@ -1,0 +1,9 @@
+{
+    "id": "stylegan",
+    "type": "docker",
+    "title": "This Person Does Not Exist",
+    "description": "No description",
+    "artist": "David Wingate",
+    "image_id": "pccl/app_stylegan2:0.4",
+    "lifetime": 120
+}
