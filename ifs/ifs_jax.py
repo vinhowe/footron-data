@@ -11,8 +11,9 @@ HEIGHT = 1024
 #HEIGHT = 2048
 white = (255, 255, 255)
 
-screen = pygame.display.set_mode((WIDTH,HEIGHT))
+screen = pygame.display.set_mode((WIDTH,HEIGHT), pygame.RESIZABLE)
 screen.fill(white)
+pygame.display.flip()
 
 PSEUDO_CNTS = 10
 CNT = 20*10000000 # number of particles
@@ -96,6 +97,11 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             done = True
+        elif event.type == pygame.VIDEORESIZE:
+            screen = pygame.display.set_mode((event.w, event.h),
+                                             pygame.RESIZABLE)
+            screen.fill(white)
+            pygame.display.flip()
 
     pind_cnter += 1
     if pind_cnter == 500:

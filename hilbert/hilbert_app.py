@@ -33,6 +33,7 @@ while True:
         elif event.type == pygame.VIDEORESIZE:
             screen = pygame.display.set_mode((event.w, event.h),
                                               pygame.RESIZABLE)
+            screen.fill(black)
 
 
     coordinate_array = np.roll(coordinate_array, speed, axis=0)
