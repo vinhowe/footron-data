@@ -1,0 +1,10 @@
+{
+    "id": "cs-spot-2",
+    "title": "BYU CS Spot 2",
+    "description": "A commercial",
+    "collection": "commercials",
+    "type": "video",
+    "filename": "spot.mp4",
+    "fullscreen": true,
+    "unlisted": true
+}
