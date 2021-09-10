@@ -59,7 +59,7 @@ class GameOfLife {
     this.wrapWidth = (value) => wrapValue(value, this.width);
     this.wrapHeight = (value) => wrapValue(value, this.height);
     this.running = false;
-    this.stepsPerFrame = 5;
+    this.stepsPerFrame = 1;
 
     this.bindMethods();
     this.initializeGraphics();
