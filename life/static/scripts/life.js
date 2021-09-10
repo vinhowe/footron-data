@@ -16,7 +16,7 @@ const PATTERNS = [
 ];
 
 // Size in pixels to make each cell. Not density independent.
-const CELL_SIZE = 12;
+const CELL_SIZE = 3;
 // This assumes 60FPS, and running at 1x on a 30FPS display might not show some oscillations.
 const FRAME_DURATION = 16.6667;
 // We have to cap steps per frame or we can get into a feedback loop where each frame takes longer than the last one
