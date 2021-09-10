@@ -77,7 +77,7 @@ class GameOfLife {
 
   messageHandler(message) {
     // A nice exponential function that gives a nice feeling of control over speed
-    this.stepsPerFrame = Math.min(((2.9833 * message) ** 2) + 0.1, 9);
+    this.stepsPerFrame = Math.min(((2.9833 * message) ** 2) + 0.1, 9) * 0.3;
   }
 
   initializeGraphics() {
