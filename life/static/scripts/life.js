@@ -16,11 +16,11 @@ const PATTERNS = [
 ];
 
 // Size in pixels to make each cell. Not density independent.
-const CELL_SIZE = 3;
+const CELL_SIZE = 4;
 // This assumes 60FPS, and running at 1x on a 30FPS display might not show some oscillations.
 const FRAME_DURATION = 16.6667;
 // We have to cap steps per frame or we can get into a feedback loop where each frame takes longer than the last one
-const MAX_STEPS_PER_FRAME = 40;
+const MAX_STEPS_PER_FRAME = 15;
 // How many steps we let a cell be continuously alive for before killing it
 const DEATH_AGE = 10000;
 // How many gliders to randomly populate the map with
@@ -207,7 +207,8 @@ class GameOfLife {
     let delta = 0;
 
     if (this.lastFrameTime !== -1) {
-      delta = time - this.lastFrameTime;
+      // Limit delta to half a frame of catch up
+      delta = Math.floor(time - this.lastFrameTime, FRAME_DURATION * 1.5);
     }
 
     this.lastFrameTime = time;
