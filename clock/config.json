@@ -1,0 +1,9 @@
+{
+    "id": "clock",
+    "title": "Vibe Clock",
+    "description": "Tick tock, this is a clock.",
+    "type": "web",
+    "fullscreen": "true",
+    "lifetime": 10,
+    "unlisted": true
+}

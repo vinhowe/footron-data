@@ -1,47 +1,49 @@
-@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
-html,
-body {
-  font-family: "Old Standard TT", serif;
-  background-color: #1f1f1f;
-  margin: 0;
-  font-size: 0;
-  color: white;
-  text-align: center;
-  overflow: hidden;
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('WorkSans-Thin.ttf')  format('truetype');
 }
+
+html, body {
+    margin: 0;
+    background: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* overflow: hidden; */
+}
+
+#video {
+    width: 100%;
+}
+
+/*
+
+text-shadow: 2px 2px 10px rgba(0,0,0,1);
+border: 1px solid black;
+
+*/
 
 #clock {
-  font-size: 24px;
-  width: 350px;
-  height: 350px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -175px;
-  margin-top: -175px;
+    width: 500px;
+    height: 250px;
+    position: absolute;
+
+    margin: 30px;
+    color: #ffffff;
+    background: rgba(0,0,0,0.4);
+    /* background: radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%); */
+    backdrop-filter: blur( 30px );
+   
+    font-family: 'Work Sans', Arial;
+    font-size: 80px;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 10px rgba(0,0,0,1.0);
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.digit-group {
-  display: inline-block;
-  height: 350px;
-}
-.digit-group:not(:last-child):after {
-  content: ":";
-  font-size: 72px;
-}
-
-.digit {
-  display: inline-block;
-  width: 50px;
-  height: 350px;
-}
-.digit .digit-number {
-  color: rgba(255, 255, 255, 0.1);
-  transform: rotate(-90deg);
-  transition: font-size 200ms, transform 350ms, color 150ms;
-}
-.digit .digit-number.highlight {
-  color: inherit;
-  font-size: 72px;
-  transform: rotate(0deg);
-}
