@@ -1,0 +1,9 @@
+{
+    "id": "hilbert",
+    "type": "docker",
+    "title": "Hilbert Curve",
+    "description": "The Hilbert curve is a \"space-filling curve.\"<br><br>The Hilbert curve is often used in computer science whenever a mapping from one dimension to two dimensions is needed, because it guarantees that points that are close along the 1D line will be nearby in the 2D space.<br><br>In the visualization to the right, each pixel in the image is traveling along a Hilbert curve.  The image becomes progressively more scrambled, but eventually returns to where it started!<br><br>Try interacting with the visualization by scanning the QR code below.",
+    "artist": "Connor Christopherson",
+    "image_id": "pccl/app_hilbert:0.2",
+    "lifetime": 240
+}
