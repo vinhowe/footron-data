@@ -1,15 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" style="background-color: #000000;">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Beautiful clock</title>
 
-  <title></title>
+    <link rel="preload" href="style.css" as="style">
+    <meta name="theme-color" content="#000000">
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+
+// second number is the quadrant.  0 is upper-left, 1 is upper-right, continuing clockwise.
+
+var videolist = [
+  ["videos/cloudy alps.mp4",0],
+  ["videos/colorful fish.mp4",1],
+  ["videos/hawaii mountains.mp4",2],
+  ["videos/jungle waterfall.mp4",1],
+  ["videos/northern lights.mp4",2],
+  ["videos/overhead river.mp4",2],
+  ["videos/overhead waves.mp4",2],
+  ["videos/panning flowers.mp4",2],
+  ["videos/rainy pond.mp4",2],
+  ["videos/rainy window.mp4",2],
+  ["videos/river leaf.mp4",2],
+  ["videos/river sunset.mp4",2],
+  ["videos/snowy forest.mp4",2],
+  ["videos/snowy lake.mp4",1],
+  ["videos/starry cliffs.mp4",1],
+  ["videos/starry nightsky.mp4",1],
+  ["videos/valley sunset.mp4",1],
+];
+  
+function leftpad( n ) {
+    return ('00'+n).slice(-2);
+}
+
+function updatetime() {
+    var currentdate = new Date();
+    var datetime = leftpad( currentdate.getHours() ) + ":" + leftpad( currentdate.getMinutes() ) + ":" + leftpad( currentdate.getSeconds() );
+    document.querySelector("#clock").innerHTML = datetime;
+    //document.querySelector("#clock").innerHTML = "FOO";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // pick a random video
+  var ind = Math.floor(Math.random()*videolist.length);
+  var video_details = videolist[ind];
+
+  var clockdiv = document.querySelector("#clock");
+
+  var pxval = "0px";
+  var pyval = "0px";
+
+  if ( video_details[1] == 0 ) {
+    clockdiv.style.left=pxval;
+    clockdiv.style.top=pyval;
+
+  } else if ( video_details[1] == 1 ) {
+    clockdiv.style.right=pxval;
+    clockdiv.style.top=pyval;
+
+  } else if ( video_details[1] == 2 ) {
+    clockdiv.style.right=pxval;
+    clockdiv.style.bottom=pyval;
+
+  } else if ( video_details[1] == 3 ) {
+    clockdiv.style.left=pxval;
+    clockdiv.style.bottom=pyval;
+  }
+
+  const videoElement = document.querySelector("#video")
+  videoElement.src = video_details[0];
+  videoElement.play();
+
+  updatetime();
+  setInterval( updatetime, 1000 );
+});
+
+</script>
+
 <body>
-    <script type="text/javascript" src="script.js"></script>
+  <video id="video" muted autoplay></video>
+  <div id="clock"></div>
 </body>
 </html>
