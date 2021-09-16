@@ -4,6 +4,6 @@
     "description": "Tick tock, this is a clock.",
     "type": "web",
     "fullscreen": "true",
-    "lifetime": 10,
+    "lifetime": 12,
     "unlisted": true
 }
