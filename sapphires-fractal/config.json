@@ -3,5 +3,7 @@
     "title": "Sapphires",
     "description": "Dive into the Mandelbrot set in this hypnotizing visualization of the beauty of math.",
     "type": "video",
-    "filename": "sapphires.webm"
+    "filename": "sapphires.webm",
+    "unlisted": true,
+    "queueable": false
 }
