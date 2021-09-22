@@ -6,5 +6,6 @@
     "collection": "animations",
     "type": "video",
     "layout": "wide",
+    "scrubbing": true,
     "filename": "taijitu.mp4"
 }
