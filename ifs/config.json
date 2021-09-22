@@ -1,8 +1,8 @@
 {
     "id": "ifs",
     "type": "docker",
-    "title": "IFS Visualization",
-    "description": "Math and computing can be beautiful.<br><br>Explore a DeJong iterated functional system.",
+    "title": "100,000,000 Iterated Points",
+    "description": "Math and computer science can be beautiful!",
     "artist": "David Wingate",
     "layout": "full",
     "image_id": "pccl/app_ifs:1.1",
