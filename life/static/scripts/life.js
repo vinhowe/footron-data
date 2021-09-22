@@ -54,16 +54,14 @@ function lerpColors(a, b, v) {
 
 class GameOfLife {
   constructor() {
-    this.width = Math.ceil(window.innerWidth / CELL_SIZE);
-    this.height = Math.ceil(window.innerHeight / CELL_SIZE);
-    this.wrapWidth = (value) => wrapValue(value, this.width);
-    this.wrapHeight = (value) => wrapValue(value, this.height);
-    this.running = false;
-    this.stepsPerFrame = 1;
-
     this.bindMethods();
-    this.initializeGraphics();
-    this.initializeGrid();
+
+    this.reloadGraphics();
+
+    window.addEventListener("resize", () => {
+      this.reloadGraphics();
+      this.start();
+    })
 
     const client = new FootronMessaging.Messaging();
     client.mount();
@@ -73,6 +71,19 @@ class GameOfLife {
   bindMethods() {
     this.loop = this.loop.bind(this);
     this.messageHandler = this.messageHandler.bind(this);
+    this.reloadGraphics = this.reloadGraphics.bind(this);
+  }
+
+  reloadGraphics() {
+    this.width = Math.ceil(window.innerWidth / CELL_SIZE);
+    this.height = Math.ceil(window.innerHeight / CELL_SIZE);
+    this.wrapWidth = (value) => wrapValue(value, this.width);
+    this.wrapHeight = (value) => wrapValue(value, this.height);
+    this.running = false;
+    this.stepsPerFrame = 1;
+
+    this.initializeGraphics();
+    this.initializeGrid();
   }
 
   messageHandler(message) {
