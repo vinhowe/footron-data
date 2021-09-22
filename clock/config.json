@@ -3,7 +3,7 @@
     "title": "Vibe Clock",
     "description": "Tick tock, this is a clock.",
     "type": "web",
-    "fullscreen": "true",
+    "layout": "full",
     "lifetime": 12,
     "unlisted": true
 }

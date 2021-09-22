@@ -5,6 +5,6 @@
     "collection": "commercials",
     "type": "video",
     "filename": "spot.mp4",
-    "fullscreen": true,
+    "layout": "full",
     "unlisted": true
 }
