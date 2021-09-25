@@ -1,19 +1,28 @@
-[
-    {
-        "id": "animations",
-        "title": "Spotlight on Animation",
-        "description": "Short animations created by BYU students."
+{
+    "animations": {
+        "experiences": [
+            "grendel",
+            "taijitu",
+            "salt",
+            "pajama-gladiator",
+            "estefan",
+            "sheriff",
+            "rams-horn",
+            "owned",
+            "metro",
+            "death",
+            "papa",
+            "stowaway"
+        ]
     },
-    {
-        "id": "fractals",
-        "title": "Fractal Journeys",
-        "description": "Explore the beauty of fractals.",
-        "artist": "Various Artists"
-    },
-    {
-        "id": "art-of-the-mundane",
-        "title": "Art of the Mundane",
-        "description": "Watch very little happen in these short demo segments.",
-        "artist": "Vin Howe"
+    "commercials": {
+        "experiences": [
+            "cs-spot-1",
+            "cs-spot-2",
+            "cs-spot-3",
+            "cs-spot-4",
+            "cs-spot-5",
+            "cs-spot-6"
+        ]
     }
-]
+}
