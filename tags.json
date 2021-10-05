@@ -1,0 +1,10 @@
+{
+    "interactive": {
+	"title": "Interactive Experiences",
+	"experiences": ["ifs", "hilbert", "wind", "life", "stylegan", "style-transfer"]
+    },
+    "animation": {
+	"title": "BYU Animation",
+	"experiences": ["taijitu", "grendel", "death", "estefan", "metro", "owned", "papa", "rams-horn", "salt", "stowaway"]
+    }
+}
