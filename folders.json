@@ -1,0 +1,14 @@
+{
+    "interactive": {
+	"title": "Interactive Experiences",
+	"description": "Explore Computer Science with these real-time interactive visualizations",
+	"tags": ["interactive"],
+	"featured": "ifs"
+    },
+    "animation": {
+	"title": "BYU Animation",
+	"description": "Browse the Center For Animation's portfolio of student projects",
+	"tags": ["animation"],
+	"featured": "grendel"
+    }
+}
