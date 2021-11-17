@@ -1,0 +1,10 @@
+{
+    "id": "beatboxers",
+    "title": "Beat Boxers",
+    "description": "Built by BYU students, Beat Boxers is the world's first Rhythm-Fighting Game. In order to win, players have to attack to the beat of the music. The closer you hit to the beat, the stronger your attacks. Keep up the rhythm and outplay your opponent!",
+    "artist": "BYU Animation",
+    "type": "capture",
+    "lifetime": 360,
+    "queueable": false,
+    "path": "Windows/BeatBoxers.exe"
+}

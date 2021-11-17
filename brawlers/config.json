@@ -1,0 +1,10 @@
+{
+    "id": "brawlers",
+    "title": "Dungeon Brawlers",
+    "description": "Built by BYU students, Dungeon Brawlers is a local multiplayer PvP battle game where you battle your friends to become the King of the Dungeon. Battle it out with swords, hammers, lasers, spears, and the power of the current dungeon king: The Cyclops.",
+    "artist": "BYU Animation",
+    "type": "capture",
+    "lifetime": 360,
+    "queueable": false,
+    "path": "WindowsNoEditor/DungeonBrawlers.exe"
+}

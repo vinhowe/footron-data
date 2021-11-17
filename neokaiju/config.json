@@ -1,0 +1,10 @@
+{
+    "id": "avastye",
+    "title": "Avast Ye!",
+    "description": "Built by BYU students, Avast Ye! is swashbuckling action-adventure in a miniature world. Lead and fight alongside your pirate ant crewmates. Combo your crew's abilities to seize the greatest treasure the bug world has ever known.",
+    "artist": "BYU Animation",
+    "type": "capture",
+    "lifetime": 360,
+    "queueable": false,
+    "path": "Windows/AvastYe.exe"
+}
