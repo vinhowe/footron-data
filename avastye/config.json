@@ -1,0 +1,10 @@
+{
+    "id": "neokaiju",
+    "title": "Neokaiju",
+    "description": "Built by BYU students, Neokaiju is a fast-paced destructive platformer game where you play as an ever-evolving kaiju wreaking havoc on the city beneath you. Save the baby kaiju trapped in power cells scattered through the city, race to destroy as much as you can within the time limit, and level up to your ultimate form!",
+    "artist": "BYU Animation",
+    "type": "capture",
+    "lifetime": 360,
+    "queueable": false,
+    "path": "Windows/Neokaiju.exe"
+}
