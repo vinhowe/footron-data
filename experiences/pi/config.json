@@ -1,0 +1,8 @@
+{
+    "id": "pi",
+    "type": "web",
+    "title": "Pi From Dots",
+    "description": "How do you compute pi without knowing pi? This visualization shows how random dots can help!",
+    "layout": "full",
+    "lifetime": 240
+}
