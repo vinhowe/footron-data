@@ -1,7 +1,15 @@
 {
+    "pi-day": {
+	"title": "Celebrate Pi Day",
+	"experiences": ["pi", "pi-circle", "pi-walk"]
+    },
     "interactive": {
 	"title": "Interactive Experiences",
-	"experiences": ["ifs", "hilbert", "wind", "life", "stylegan", "style-transfer"]
+	"experiences": ["ifs", "hilbert", "wind", "life", "stylegan", "style-transfer", "fluid", "pong4", "your-campus", "pi", "pi-circle", "pi-walk"]
+    },
+    "game": {
+	"title": "BYU Games",
+	"experiences": ["brawlers", "beatboxers", "neokaiju", "avastye"]
     },
     "animation": {
 	"title": "BYU Animation",
