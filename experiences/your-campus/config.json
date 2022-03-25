@@ -1,0 +1,10 @@
+{
+    "id": "your-campus",
+    "title": "Fly Around BYU!",
+    "description": "Explore BYU campus with a real-time, interactive 3D model. You can pilot a virtual drone as it flies around campus. See what amazing details you can find!",
+    "artist": "BYU PCCL, BYU ROAM",
+    "type": "capture",
+    "load_time": 5,
+    "lifetime": 600,
+    "path": "Windows/YourCampus.exe"
+}

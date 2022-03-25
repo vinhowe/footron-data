@@ -1,0 +1,8 @@
+{
+    "id": "pi-walk",
+    "type": "web",
+    "title": "Walk With Pi",
+    "description": "What happens if you use the digits of pi to try and make art?",
+    "layout": "full",
+    "lifetime": 180
+}

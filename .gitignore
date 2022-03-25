@@ -6,3 +6,4 @@ __pycache__/
 *.avi
 *.webm
 *.ttf
+node_modules/

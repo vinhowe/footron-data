@@ -1,0 +1,9 @@
+{
+    "id": "pong4",
+    "type": "web",
+    "title": "4-Way Pong",
+    "description": "A fresh take on a classic game, play this classic 1v1 game now with 4 players!",
+    "artist": "Chris Luangrath",
+    "queueable": false,
+    "lifetime": 60
+}

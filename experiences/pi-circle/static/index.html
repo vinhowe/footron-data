@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PI DAY!</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="js-colormaps.js" type="text/javascript"></script>
+    <script src="fader.js" type="text/javascript"></script>
+    <script src="pi1m.js" type="text/javascript"></script>
+    <script src="do_scene.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+
+    <div id="pidigits"></div>
+
+    <div class="piday" id="pidaytext"></div>
+
+    <div class="text2 fader" id="stats">
+      Pi has some amazing properties.
+    </div>
+
+    <div class="text2 fader" id="stats">
+      The digits are essentially random.
+    </div>
+
+    <div class="text2 fader" id="stats">
+      Every imaginable sequence of digits can be found somewhere in the digits of pi...
+    </div>
+
+    <div class="text2 fader" id="stats">
+      ...and every such sequence occurs infinitely often.
+    </div>
+
+    <div class="text2 fader" id="stats">
+      So, how often do digits of pi co-occur?
+    </div>
+
+    <div class="text2 fader" id="stats">
+      This visualization explores that!
+    </div>
+
+    <div class="text2 fader" id="stats">
+      For each pair of digits of pi, we draw an arc connecting them.
+    </div>
+
+    <div class="text2 fader" id="stats">
+      What patterns do you see?
+    </div>
+
+    <canvas id="myCanvas" width="2736" height="1216">
+
+    <script>
+      function startFading() {
+	  prep_canvas();
+          fader_set_defaults( {
+              in: 300,
+              stay: 5000,
+              out: 300,
+              delaynext:6000
+          });
+          fader_start();
+
+	  animate();
+
+	  var dateObj = new Date();
+	  var month = dateObj.getMonth() + 1; //months from 1-12
+	  var day = dateObj.getDate();
+
+	  if ((month == 3) && (day == 11) ) {
+	      document.getElementById( "pidaytext" ).innerHTML = "HAPPY PI DAY!";
+	  }
+
+	  document.getElementById( "pidigits" ).innerHTML = disp_pi1m.substr(0,100)
+
+      }
+      window.addEventListener( 'load', startFading );
+    </script>
+
+  </body>
+</html>
