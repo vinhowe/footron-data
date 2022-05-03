@@ -25,36 +25,36 @@ const buttonStyle = css`
   }
 `;
 
-function getButton1Name(name:(string | undefined)){
+function getButton1Name(name){
   return (name === "left" ? "Up" :
       name === "right" ? "Down" :
           name === "up" ? "Left" :
               name === "down" ? "Left" :
                   "1")
 }
-function getButton2Name(name:(string | undefined)){
+function getButton2Name(name){
   return (name === "left" ? "Down" :
       name === "right" ? "Up" :
           name === "up" ? "Right" :
               name === "down" ? "Right" :
                   "2")
 }
-function getButtonColor(name:(string | undefined)){
+function getButtonColor(name){
   return (name === "left" ? blue :
       name === "right" ? green :
           name === "up" ? red :
               name === "down" ? yellow :
                   "black")
 }
-function getButtonTextColor(name:(string | undefined)){
+function getButtonTextColor(name){
   return (name === "down" ? "black" : "whitesmoke")
 }
 
 
-const ControlsComponent = (): JSX.Element => {
-  const [playerName, setPlayerName] = useState<string | undefined>();
+const ControlsComponent = () => {
+  const [playerName, setPlayerName] = useState();
 
-  const { sendMessage } = useMessaging<{ player: string }>((message) => {
+  const { sendMessage } = useMessaging((message) => {
     setPlayerName(message.player);
   });
 

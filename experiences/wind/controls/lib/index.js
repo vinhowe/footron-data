@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React, { useCallback, useState, useEffect } from "react";
@@ -21,31 +19,31 @@ const containerStyle = css`
   }
 `;
 
-const ControlsComponent = (): JSX.Element => {
-    const [numParticles, setNumParticles] = useState<number>(65536);
-    const [fade, setFade] = useState<number>(0.996);
-    const [speed, setSpeed] = useState<number>(0.25);
+const ControlsComponent = () => {
+    const [numParticles, setNumParticles] = useState(65536);
+    const [fade, setFade] = useState(0.996);
+    const [speed, setSpeed] = useState(0.25);
 
-    const { sendMessage } = useMessaging<any>((message) => {
+    const { sendMessage } = useMessaging((message) => {
         // we're not expecting any messages from the server
         console.log( message );
     });
 
-    const updateServer = async (vals: unknown) => {
+    const updateServer = async (vals) => {
         await sendMessage(vals);
     };
 
-    const updateNP = async (event: unknown, value: unknown) => {
+    const updateNP = async (event, value) => {
         setNumParticles(value);
         updateServer( { numParticles:value, fade:fade, speed:speed } );
     };
 
-    const updateFade = async (event: unknown, value: unknown) => {
+    const updateFade = async (event, value) => {
         setFade(value);
         updateServer( { numParticles:numParticles, fade:value, speed:speed } );
     };
 
-    const updateC = async (event: unknown, value: unknown) => {
+    const updateC = async (event, value) => {
         setSpeed(value);
         updateServer( { numParticles:numParticles, fade:fade, speed:value } );
     };

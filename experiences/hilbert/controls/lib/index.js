@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React, { useCallback, useState, useEffect } from "react";
@@ -21,12 +19,11 @@ const containerStyle = css`
   }
 `;
 
-const ControlsComponent = (): JSX.Element => {
-    const [majorIndVal, setMajorIndVal] = useState<number>(0);
-    const [minorIndVal, setMinorIndVal] = useState<number>(0);
+const ControlsComponent = () => {
+    const [majorIndVal, setMajorIndVal] = useState(0);
+    const [minorIndVal, setMinorIndVal] = useState(0);
 
-    const { sendMessage } = useMessaging<any>((message) => {
-//      console.log( "Got message:", message );
+    const { sendMessage } = useMessaging((message) => {
         setMajorIndVal( message[0] );
         setMinorIndVal( message[1] );
     });
