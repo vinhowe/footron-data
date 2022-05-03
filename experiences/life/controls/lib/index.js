@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css, jsx } from "@emotion/react";
+import { css } from "@emotion/react";
 import React, { useCallback } from "react";
 import { useMessaging } from "@footron/controls-client";
 import { Slider } from "@material-ui/core";
@@ -13,8 +13,8 @@ const containerStyle = css`
   }
 `;
 
-const ControlsComponent = (): jsx.JSX.Element => {
-  const { sendMessage } = useMessaging<number>();
+const ControlsComponent = () => {
+  const { sendMessage } = useMessaging();
 
   const updateSlider = useCallback(
     async (event, value) => {

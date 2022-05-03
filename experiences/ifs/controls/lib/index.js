@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React, { useCallback, useState, useEffect } from "react";
@@ -21,13 +19,13 @@ const containerStyle = css`
   }
 `;
 
-const ControlsComponent = (): JSX.Element => {
-  const [aVal, setAVal] = useState<number>(0);
-  const [bVal, setBVal] = useState<number>(0);
-  const [cVal, setCVal] = useState<number>(0);
-  const [dVal, setDVal] = useState<number>(0);
+const ControlsComponent = () => {
+  const [aVal, setAVal] = useState(0);
+  const [bVal, setBVal] = useState(0);
+  const [cVal, setCVal] = useState(0);
+  const [dVal, setDVal] = useState(0);
 
-  const { sendMessage } = useMessaging<any>((message) => {
+  const { sendMessage } = useMessaging((message) => {
     const vals = JSON.parse(message);
     setAVal(vals[0]);
     setBVal(vals[1]);
@@ -35,31 +33,31 @@ const ControlsComponent = (): JSX.Element => {
     setDVal(vals[3]);
   });
 
-  const updateServer = async (vals: unknown) => {
+  const updateServer = async (vals) => {
     await sendMessage(vals);
   };
 
-  const serverResume = async (value: unknown) => {
+  const serverResume = async (value) => {
     await sendMessage([value]);
   };
 
-  const handleClick = async (vals: unknown) => {
+  const handleClick = async (vals) => {
     updateServer(vals);
   };
 
-  const updateA = async (event: unknown, value: unknown) => {
+  const updateA = async (event, value) => {
     setAVal(value);
     updateServer([value, bVal, cVal, dVal]);
   };
-  const updateB = async (event: unknown, value: unknown) => {
+  const updateB = async (event, value) => {
     setBVal(value);
     updateServer([aVal, value, cVal, dVal]);
   };
-  const updateC = async (event: unknown, value: unknown) => {
+  const updateC = async (event, value) => {
     setCVal(value);
     updateServer([aVal, bVal, value, dVal]);
   };
-  const updateD = async (event: unknown, value: unknown) => {
+  const updateD = async (event, value) => {
     setDVal(value);
     updateServer([aVal, bVal, cVal, value]);
   };

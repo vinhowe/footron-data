@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React, { useCallback, useState, useEffect } from "react";
@@ -21,10 +19,10 @@ const containerStyle = css`
   }
 `;
 
-const ControlsComponent = (): JSX.Element => {
-    const [interpVal, setInterpVal] = useState<number>(0);
+const ControlsComponent = () => {
+    const [interpVal, setInterpVal] = useState(0);
 
-    const { sendMessage } = useMessaging<any>((message) => {
+    const { sendMessage } = useMessaging((message) => {
         console.log( "Got message:", message );
     });
 
