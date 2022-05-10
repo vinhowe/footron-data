@@ -1,0 +1,25 @@
+[animations]
+experiences = [
+  "grendel",
+  "taijitu",
+  "salt",
+  "pajama-gladiator",
+  "estefan",
+  "sheriff",
+  "rams-horn",
+  "owned",
+  "metro",
+  "death",
+  "papa",
+  "stowaway"
+]
+
+[commercials]
+experiences = [
+  "cs-spot-1",
+  "cs-spot-2",
+  "cs-spot-3",
+  "cs-spot-4",
+  "cs-spot-5",
+  "cs-spot-6"
+]
