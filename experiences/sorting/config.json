@@ -1,0 +1,8 @@
+{
+    "id": "sorting",
+    "type": "web",
+    "title": "Colorful Array Sorting",
+    "description": "Watch these arrays sort themselves!",
+    "layout": "full",
+    "lifetime": 240
+}
