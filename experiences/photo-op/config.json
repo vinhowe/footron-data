@@ -1,0 +1,9 @@
+{
+    "id": "photo-op",
+    "type": "web",
+    "title": "Photo Op",
+    "description": "Take a picture in front of the wall for graduation.",
+    "queueable": false,
+    "layout": "full",
+    "lifetime": 120
+}
