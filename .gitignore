@@ -4,6 +4,7 @@ __pycache__/
 *.mkv
 *.mov
 *.avi
+experiences/graduation/
 *.webm
 *.ttf
 node_modules/
