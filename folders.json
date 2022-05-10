@@ -1,27 +1,43 @@
 {
-    "pi-day": {
-	"title": "Celebrate Pi Day",
-	"description": "See Pi in a new light with three exciting visualizations.",
-	"tags": ["pi-day"],
-	"featured": "pi-circle",
-	"visible": false
-    },
     "interactive": {
-	"title": "Interactive Experiences",
-	"description": "Explore Computer Science with these real-time interactive visualizations.",
-	"tags": ["interactive"],
-	"featured": "ifs"
+        "title": "Interactive Experiences",
+        "description": "Explore Computer Science with these real-time interactive visualizations.",
+        "tags": [
+            "interactive"
+        ],
+        "featured": "ifs"
     },
     "animation": {
-	"title": "BYU Animation",
-	"description": "Browse the Center For Animation's portfolio of student films.",
-	"tags": ["animation"],
-	"featured": "grendel"
+        "title": "BYU Animation",
+        "description": "Browse the Center For Animation's portfolio of student films.",
+        "tags": [
+            "animation"
+        ],
+        "featured": "grendel"
     },
     "games": {
-	"title": "BYU Games",
-	"description": "Discover games created by Center For Animation students.",
-	"tags": ["game"],
-	"featured": "beatboxers"
+        "title": "BYU Games",
+        "description": "Discover games created by Center For Animation students.",
+        "tags": [
+            "game"
+        ],
+        "featured": "beatboxers"
+    },
+    "pi-day": {
+        "title": "Learn about Pi",
+        "description": "See Pi in a new light with three exciting visualizations.",
+        "tags": [
+            "pi-day"
+        ],
+        "featured": "pi-circle"
+    },
+    "graduation": {
+        "title": "Graduation",
+        "description": "Use the Wall to celebrate graduation!",
+        "visible": false,
+        "tags": [
+            "graduation"
+        ],
+        "featured": "graduation"
     }
 }
