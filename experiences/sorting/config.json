@@ -3,6 +3,7 @@
     "type": "web",
     "title": "Colorful Array Sorting",
     "description": "Watch these arrays sort themselves!",
+    "action_hints": ["change the number of slices", "change the sorting speed"],
     "layout": "full",
     "lifetime": 240
 }

@@ -3,6 +3,7 @@
     "type": "web",
     "title": "4-Way Pong",
     "description": "A fresh take on a classic game, play this classic 1v1 game now with 4 players!",
+    "action_hints": ["play with friends", "start a game"],
     "artist": "Chris Luangrath",
     "queueable": false,
     "lifetime": 60

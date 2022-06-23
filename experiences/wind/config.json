@@ -4,6 +4,7 @@
     "title": "Wind Explorer",
     "description": "See how datascience visualizations can be beautiful, and help understand the current wind patterns across the planet.",
     "artist": "David Wingate",
+    "action_hints": ["change the number of particles", "change the speed"],
     "layout": "full",
     "image_id": "pccl/app_wind:0.5",
     "lifetime": 270
