@@ -5,6 +5,7 @@
     "description": "Modern machine learning can generate infinite content, including realistic human faces.",
     "long_description": "None of these people exist!<br><br>Modern machine learning models can be used to find patterns in data, but interestingly enough, they can also be used to <i>generate</i> data.<br><br>In this demo, a \"deep neural network\" (or DNN) was trained to generate images of human faces. The DNN is like an extraordinarily complex function, that accepts a single input and generates a single output. In this case, the input is a \"z\" vector, which is just a list of 100 numbers. Those numbers represent all possible human faces! The output is a high quality image of a face.<br><br>The demo starts by randomly exploring faces by smoothly changing the \"z\" vector that is input to the model. You can also interpolate between two different z vectors, or extrapolate, or many other things!<br><br>Try generating your own faces by scanning the QR code below.",
     "artist": "David Wingate",
+    "action_hints": ["pick a random face", "mix two faces together"],
     "image_id": "pccl/app_stylegan2:0.9",
     "load_time": 7,
     "layout": "full",

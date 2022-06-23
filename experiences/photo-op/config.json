@@ -3,6 +3,7 @@
     "type": "web",
     "title": "Photo Op",
     "description": "Take a picture in front of the wall for graduation.",
+    "action_hints": ["pick a photo"],
     "queueable": false,
     "layout": "full",
     "lifetime": 120

@@ -4,6 +4,7 @@
     "title": "100,000,000 Iterated Points",
     "description": "Math and computer science can be beautiful!",
     "artist": "David Wingate",
+    "action_hints": ["move the sliders"],
     "layout": "full",
     "image_id": "pccl/app_ifs:1.4",
     "lifetime": 270
