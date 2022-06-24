@@ -12,7 +12,8 @@ jobs:
       run: echo test ${{ github.event.pull_request.base.sha }} test
     - name: Checkout last ref
       uses: actions/checkout@v3
-      path: ./last-ref
-      ref: ${{ github.event.pull_request.base.sha }}
+      with:
+        path: ./last-ref
+        ref: ${{ github.event.pull_request.base.sha }}
     - name: List directories
       run: ls
