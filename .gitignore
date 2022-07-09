@@ -8,3 +8,4 @@ experiences/graduation/
 *.webm
 *.ttf
 node_modules/
+build/
