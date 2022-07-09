@@ -1,4 +1,4 @@
-name: "build-experiences"
+name: "build-changed-experiences"
 
 on: [pull_request]
 
