@@ -1,0 +1,17 @@
+name: "build-experiences"
+
+on: [pull_request, push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install build script dependencies
+      run: pip install tomli
+    - name: Run build script on all experiences
+      run: python build_experiences.py
