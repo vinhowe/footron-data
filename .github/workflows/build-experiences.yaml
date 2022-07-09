@@ -15,3 +15,8 @@ jobs:
       run: pip install tomli
     - name: Run build script on all experiences
       run: python build_experiences.py
+    - name: Upload experiences
+      uses: actions/upload-artifact@v3
+      with:
+        name: experiences
+        path: experiences/
