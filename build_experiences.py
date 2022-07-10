@@ -84,9 +84,7 @@ def build_experiences(experience_paths: List[Path], build_dir: Path):
             else:
                 static_path = web_dir
 
-            # Make static build directory
             static_build_dir = experience_build_dir / "static"
-            static_build_dir.mkdir(parents=True, exist_ok=True)
 
             # Copy static files to build_dir using subprocess.run
             subprocess.run(["cp", "-r", str(static_path), str(static_build_dir)])
