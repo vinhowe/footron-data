@@ -1,42 +1,13 @@
-import subprocess
-from pathlib import Path
-from typing import Dict
-
-import tomli
 import json
 import shutil
+import subprocess
+from pathlib import Path
+from typing import List
+
+import tomli
 
 
-def diff_remote_experiences(
-    old_experiences: Dict[str, str], new_experiences: Dict[str, str]
-) -> Dict[str, str]:
-    # We don't care about anything that is only in old experiences
-    # Remove anything that is only in new_experiences
-    new_experience_keys = set(new_experiences.keys())
-    old_experience_keys = set(old_experiences.keys())
-    modified_experiences = new_experience_keys - old_experience_keys
-    for key in new_experience_keys & old_experience_keys:
-        if new_experiences[key] != old_experiences[key]:
-            modified_experiences.add(key)
-    return {key: new_experiences[key] for key in modified_experiences}
-
-
-def clone_remote_experiences(
-    experiences: Dict[str, Dict[str, str]], experiences_dir: Path
-):
-    # Git clone each experience value in experiences
-    for name, data in experiences.items():
-        url = data["url"]
-        commit = data["commit"]
-        repository_dir = experiences_dir / name
-        output = subprocess.run(["git", "clone", url, str(repository_dir)])
-        # Print status code
-        if output.returncode != 0:
-            raise RuntimeError(f"Failed to clone {url}")
-        subprocess.run(["git", "checkout", commit], cwd=str(repository_dir))
-
-
-def build_experiences(experiences_dir: Path, build_dir: Path):
+def build_experiences(experience_paths: List[Path], build_dir: Path):
     if build_dir.exists():
         shutil.rmtree(build_dir)
 
@@ -44,31 +15,30 @@ def build_experiences(experiences_dir: Path, build_dir: Path):
     build_dir.mkdir(parents=True, exist_ok=True)
 
     # Build each experience in experiences_dir
-    for experience_name in experiences_dir.glob("*"):
-        experience_name = experience_name.name
-        experience_dir = experiences_dir / experience_name
-
-        # Create experience build directory
-        experience_build_dir = build_dir / experience_name
-        experience_build_dir.mkdir(parents=True, exist_ok=True)
-
+    for experience_dir in experience_paths:
         # Copy config file, either config.json or config.toml
         if (
             not (config_path := experience_dir / "config.json").exists()
             and not (config_path := experience_dir / "config.toml").exists()
         ):
             raise RuntimeError(
-                f"Experience '{experience_name}' doesn't have a config file"
+                f"Experience at '{experience_dir}' doesn't have a config file"
             )
-
-        # Copy config file to build directory
-        shutil.copy(config_path, experience_build_dir)
 
         # Read config data
         with open(config_path, "rb") as config_file:
             config = (json if config_path.suffix == ".json" else tomli).load(
                 config_file
             )
+
+        experience_name = config["id"]
+
+        # Create experience build directory
+        experience_build_dir = build_dir / experience_name
+        experience_build_dir.mkdir(parents=True, exist_ok=True)
+
+        # Copy config file to build directory
+        shutil.copy(config_path, experience_build_dir)
 
         if (unlisted := config.get("unlisted")) is None or not unlisted:
             # Copy image files to build directory
@@ -122,8 +92,6 @@ def build_experiences(experiences_dir: Path, build_dir: Path):
             subprocess.run(["cp", "-r", str(static_path), str(static_build_dir)])
 
 
-
-
 if __name__ == "__main__":
     # Setup argparse
     import argparse
@@ -131,22 +99,19 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "path",
+        "experiences",
         type=Path,
-        help="Path to directory with experiences and experiences.toml",
-        nargs="?",
-        default=Path("./"),
+        help="Paths to experiences to build",
+        nargs="+",
     )
     parser.add_argument(
-        "--since", type=Path, help="Last experiences/experiences.toml directory"
+        "--build-dir",
+        type=Path,
+        help="Path to directory to build experiences into",
+        default=Path("build"),
     )
 
     args = parser.parse_args()
-
-    with open(args.path / "experiences.toml", "rb") as experiences_file:
-        remote_experiences = tomli.load(experiences_file)
-    experiences_dir = args.path / "experiences"
-    local_experiences = [path.name for path in experiences_dir.glob("*")]
 
     # TODO: Set up diffing so that pull requests do partial builds instead. Should be
     #  fun but a v2 thing for sure.
@@ -159,5 +124,4 @@ if __name__ == "__main__":
 
     # TODO: Consider making these into a class once it becomes clear how much state we
     #  need.
-    clone_remote_experiences(remote_experiences, experiences_dir)
-    build_experiences(experiences_dir, args.path / "build")
+    build_experiences(args.experiences, args.build_dir)

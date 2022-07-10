@@ -14,7 +14,7 @@ jobs:
     - name: Install build script dependencies
       run: pip install tomli
     - name: Run build script on all experiences
-      run: python build_experiences.py
+      run: python build_experiences.py $(python3 clone_remote_experiences.py)
     - name: Upload experiences
       uses: actions/upload-artifact@v3
       with:
