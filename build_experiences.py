@@ -75,7 +75,7 @@ def build_experiences(experience_paths: List[Path], build_dir: Path):
                     (package_json_directories := package_json_data.get("directories"))
                     and isinstance(package_json_directories, dict)
                     and (
-                        build_pathname := package_json_directories.get("footron-static")
+                        build_pathname := package_json_directories.get("footronStatic")
                     )
                 ):
                     static_path = web_dir / build_pathname
