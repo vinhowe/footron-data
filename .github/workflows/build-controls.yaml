@@ -1,0 +1,36 @@
+name: "build-controls"
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Checkout web
+      uses: actions/checkout@v3
+      with:
+        repository: BYU-PCCL/footron-web
+        path: web
+    - name: Setup Node
+      uses: actions/setup-node@v3
+    - name: Install web dependencies
+      working-directory: ./web
+      run: npm install
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install web build script
+      run: pip install git+https://github.com/byu-pccl/footron-web-build.git
+    - name: Run web build script
+      env:
+        REACT_APP_API_BASE_URL: ${{ secrets[format('API_BASE_URL_{0}', github.ref_name)] }}
+        REACT_APP_API_BASE_URL: ${{ secrets[format('MESSAGING_BASE_URL_{0}', github.ref_name)] }}
+      run: python3 -m footron_web_build ./web ./build $(python3 clone_remote_experiences.py)
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: web-build
+        path: web/build
