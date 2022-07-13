@@ -21,6 +21,8 @@ jobs:
       run: python3 clone_remote_experiences.py | tee cloned_experiences
     - name: Run build script on all experiences
       run: python build_experiences.py $(cat cloned_experiences)
+    - name: Generate experience hashes
+      run: python generate_experience_hashes.py build/experiences/* > build/hashes.json
     - name: Upload experiences
       uses: actions/upload-artifact@v3
       with:
