@@ -106,7 +106,7 @@ if __name__ == "__main__":
         "--build-dir",
         type=Path,
         help="Path to directory to build experiences into",
-        default=Path("build"),
+        default=Path("build/experiences"),
     )
 
     args = parser.parse_args()

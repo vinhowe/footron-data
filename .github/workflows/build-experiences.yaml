@@ -13,6 +13,10 @@ jobs:
         python-version: '3.10'
     - name: Install build script dependencies
       run: pip install tomli
+    - name: Make build dir
+      run: mkdir build
+    - name: Copy editorial configs to build dir
+      run: cp collections.toml folders.toml tags.toml build/
     - name: Run build script on all experiences
       run: python build_experiences.py $(python3 clone_remote_experiences.py)
     - name: Upload experiences
