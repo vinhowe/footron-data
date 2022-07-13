@@ -17,8 +17,10 @@ jobs:
       run: mkdir build
     - name: Copy editorial configs to build dir
       run: cp collections.toml folders.toml tags.toml build/
+    - name: Clone remote experiences
+      run: python3 clone_remote_experiences.py | tee cloned_experiences
     - name: Run build script on all experiences
-      run: python build_experiences.py $(python3 clone_remote_experiences.py)
+      run: python build_experiences.py $(cat cloned_experiences)
     - name: Upload experiences
       uses: actions/upload-artifact@v3
       with:
