@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 from typing import List
 import tempfile
@@ -56,4 +57,4 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    print(generate_experience_hashes(args.experiences))
+    print(json.dumps(generate_experience_hashes(args.experiences)))
