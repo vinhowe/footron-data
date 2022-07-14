@@ -28,7 +28,7 @@ jobs:
       run: pip install git+https://github.com/byu-pccl/footron-web-build.git
     - name: Get branch name with underscores
       id: format-branch-name
-      run: echo '::set-output name=BRANCH_NAME::$(echo "${{github.ref_name}}" | tr - _)'
+      run: echo "::set-output name=BRANCH_NAME::$(echo '${{github.ref_name}}' | tr - _)"
     - name: Run web build script
       env:
         REACT_APP_API_BASE_URL: ${{ secrets[format('API_BASE_URL_{0}', steps.format-branch-name.BRANCH_NAME)] }}
