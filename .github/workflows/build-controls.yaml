@@ -33,14 +33,14 @@ jobs:
       env:
         REACT_APP_API_BASE_URL: ${{ secrets[format('api_base_url_{0}', steps.format-branch-name.outputs.BRANCH_NAME)] }}
         REACT_APP_MESSAGING_BASE_URL: ${{ secrets[format('messaging_base_url_{0}', steps.format-branch-name.outputs.BRANCH_NAME)] }}
-      run: CI= python3 -m footron_web_build ./web ./build $(python3 clone_remote_experiences.py)
+      run: CI= python3 -m footron_web_build ./web ./build $(python3 clone_remote_experiences.py) --color-output-path=colors.json
     - name: Upload web build
       uses: actions/upload-artifact@v3
       with:
         name: web-build
         path: build
-  # - name: Upload colors.json
-  #   uses: actions/upload-artifact@v3
-  #   with:
-  #     name: colors
-  #     path: colors.json
+    - name: Upload colors.json
+      uses: actions/upload-artifact@v3
+      with:
+        name: colors
+        path: colors.json
