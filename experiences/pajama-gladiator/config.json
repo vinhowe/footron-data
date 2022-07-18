@@ -5,6 +5,8 @@
     "artist": "BYU Animation",
     "collection": "animations",
     "scrubbing": true,
+    "queueable": false,
+    "unlisted": true,
     "type": "video",
     "filename": "video.mp4"
 }
