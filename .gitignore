@@ -6,6 +6,5 @@ __pycache__/
 *.avi
 experiences/graduation/
 *.webm
-*.ttf
 node_modules/
 build/
