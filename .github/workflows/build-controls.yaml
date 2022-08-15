@@ -14,6 +14,7 @@ jobs:
         repository: BYU-PCCL/footron-web
         path: web
     - name: Setup Node
+      working-directory: ./web
       uses: actions/setup-node@v3
       with:
         cache: "yarn"
