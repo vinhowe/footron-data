@@ -8,5 +8,6 @@
     "action_hints": ["move along the curve", "pick a different picture"],
     "layout": "hd",
     "image_id": "pccl/app_hilbert:0.2",
-    "lifetime": 120
+    "lifetime": 120,
+    "queueable": false
 }
