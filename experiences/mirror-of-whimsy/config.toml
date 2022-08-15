@@ -3,6 +3,6 @@ title = "Mirror of Whimsy"
 description = "See yourself in a whole new way!"
 long_description = "What would you like like as a pile of bananas? Explore how our LIDAR sensors can transform you in rather unique ways."
 type = "capture"
-load_time = 5
+load_time = 8
 lifetime = 600
 path = "Windows/SmokyHumans.exe"
